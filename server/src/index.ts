@@ -3,6 +3,7 @@ import cors from "cors";
 import { config } from "dotenv";
 import { connect } from "./lib/dbConnect";
 import { router } from "./routes/compiler";
+import path from "path";
 
 config();
 
@@ -14,5 +15,11 @@ connect(process.env.MONGO_URL);
 app.use(express.json());
 app.use(cors());
 app.use("/api/compile", router);
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
