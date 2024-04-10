@@ -15,8 +15,4 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/compile", router);
 
-app.get("/", (req: Request, res: Response) => {
-  return res.status(200).send("ok");
-});
-
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
