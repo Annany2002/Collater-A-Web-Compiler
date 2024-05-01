@@ -5,7 +5,7 @@
   "main": "server/src/index.ts",
   "scripts": {
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "node sever/src/index.js",
+    "start": "node server/src/index.js",
     "dev": "nodemon server/src/index.ts"
   },
   "keywords": [],
