@@ -73,7 +73,7 @@ export default function SecHeader() {
   return (
     <div className="flex justify-between items-center h-[50px] p-2">
       <div className="flex gap-1">
-        <Button onClick={saveCode}>Save Code</Button>
+        <Button onClick={saveCode}>Save Changes</Button>
         <Dialog>
           <Button
             variant={"secondary"}
