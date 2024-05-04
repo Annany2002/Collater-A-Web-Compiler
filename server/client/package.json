@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "collater-server": "file:.."
+  }
+}
