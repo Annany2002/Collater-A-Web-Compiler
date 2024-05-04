@@ -45,14 +45,11 @@ export default function SecHeader() {
   const loadCode = async () => {
     try {
       const body = {
-        method: "post",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ codeId }),
       };
-      const response = await fetch(
-        "http://localhost:5001/api/compile/load",
-        body
-      );
+      const response = await fetch("/api/compile/load", body);
       const data = await response.json();
       dispatch(updatePrevCode(data.languages));
     } catch (error) {
