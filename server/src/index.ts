@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/compile", router);
 
-// app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use(express.static(path.join(process.cwd(), "../client/dist")));
 
 app.use("*", (req, res) => {
   res.send("404! Route Not Found");
