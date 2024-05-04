@@ -15,7 +15,6 @@ export const getCode = async (req: Request, res: Response) => {
   const { codeId } = req.body;
   try {
     const codeLang = await Code.findById(codeId);
-
     if (!codeLang) return res.status(404).send("Code not found");
 
     return res.status(200).send({ languages: codeLang.codeLanguages });
