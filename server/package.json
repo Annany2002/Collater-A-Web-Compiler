@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "build": "npm install && npm install --prefix client && npm run build --prefix client",
+    "build": "npm install && npx tsc -b",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.js"
   },
